@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import HomePage from "./pages/HomePage";
 import Runningclubs from "./pages/Runningclubs";
+import RunningclubDetail from "./pages/RunningclubDetail";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -41,6 +42,7 @@ function App() {
       {isLoading ? <Loading /> : null}
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/runningclubs/:id" component={RunningclubDetail} />
         <Route path="/runningclubs" component={Runningclubs} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
