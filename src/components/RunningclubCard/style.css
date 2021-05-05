@@ -1,17 +1,3 @@
-/* body {
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-}
-
-.Parktitle {
-  border: 3px solid #74d600;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
-
 .link-unstyled {
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -21,13 +7,6 @@
   border-bottom: 2px solid #dddada;
   margin-bottom: 50px;
 }
-
-/* .description {
-  max-height: 40%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
 
 .description {
   margin-top: 60px;

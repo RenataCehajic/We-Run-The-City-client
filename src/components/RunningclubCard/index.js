@@ -8,7 +8,7 @@ import "./style.css";
 export default function RunningclubCard(props) {
   return (
     <div>
-      <div className="Parktitle">
+      <div>
         <h2 className="Running">
           <span
             style={{
