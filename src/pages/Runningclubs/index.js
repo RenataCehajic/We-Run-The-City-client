@@ -7,6 +7,7 @@ import { fetchRunningclubs } from "../../store/runningclubs/actions";
 import { selectRunningclubs } from "../../store/runningclubs/selectors";
 
 import RunningclubCard from "../../components/RunningclubCard";
+import MapCard from "../../components/MapCard";
 
 export default function Runningclubs() {
   const dispatch = useDispatch();
@@ -63,6 +64,7 @@ export default function Runningclubs() {
           </Container>
         )}
       </div>
+      {active === "MapView" && <MapCard />}
     </div>
   );
 }
