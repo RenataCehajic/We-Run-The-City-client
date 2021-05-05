@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Image } from "cloudinary-react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -12,9 +14,20 @@ export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [imageSelected, setImageSelected] = useState("");
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const history = useHistory();
+
+  const uploadImage = () => {
+    const formData = new FormData();
+    formData.append("file", imageSelected);
+    formData.append("upload_preset", "pu32zmvv");
+
+    axios
+      .post("https://api.cloudinary.com/v1_1/dogbbrxle/image/upload", formData)
+      .then((response) => console.log(response));
+  };
 
   useEffect(() => {
     if (token !== null) {
@@ -40,7 +53,7 @@ export default function SignUp() {
           <Form.Label>Name</Form.Label>
           <Form.Control
             value={name}
-            onChange={event => setName(event.target.value)}
+            onChange={(event) => setName(event.target.value)}
             type="text"
             placeholder="Enter name"
             required
@@ -50,7 +63,7 @@ export default function SignUp() {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             value={email}
-            onChange={event => setEmail(event.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
             type="email"
             placeholder="Enter email"
             required
@@ -64,10 +77,25 @@ export default function SignUp() {
           <Form.Label>Password</Form.Label>
           <Form.Control
             value={password}
-            onChange={event => setPassword(event.target.value)}
+            onChange={(event) => setPassword(event.target.value)}
             type="password"
             placeholder="Password"
             required
+          />
+          <input
+            style={{ marginTop: "20px" }}
+            type="file"
+            onChange={(event) => {
+              setImageSelected(event.target.files[0]);
+            }}
+          />
+          <Button variant="primary" onClick={uploadImage}>
+            Upload Image
+          </Button>
+          <Image
+            style={{ width: 120, marginTop: "20px" }}
+            cloudName="dogbbrxle"
+            publicId="https://res.cloudinary.com/dogbbrxle/image/upload/v1620205148/r5kbc2plwepap7lm4kwl.png"
           />
         </Form.Group>
         <Form.Group className="mt-5">
