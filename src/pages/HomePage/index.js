@@ -32,7 +32,7 @@ export default function HomePage() {
             className="btn btn-lg btn-success"
             style={{ marginTop: "20px" }}
           >
-            View All Runningclubs
+            View All Running clubs
           </Link>
         </div>
 
