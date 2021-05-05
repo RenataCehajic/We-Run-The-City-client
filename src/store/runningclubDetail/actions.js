@@ -1,9 +1,12 @@
 import axios from "axios";
+import { showMessageWithTimeout, appDoneLoading } from "../appState/actions";
+import { selectUser } from "../user/selectors";
 
 const API_URL = "//localhost:4000";
 
 export const FETCHED_RUNNINGCLUB_DETAILS = "FETCHED_RUNNINGCLUB_DETAILS";
 export const UPDATED_RUNNINGCLUB_LIKES = "UPDATED_RUNNINGCLUB_LIKES";
+export const POSTED_REVIEW = "POSTED_REVIEW";
 
 export const fetchedRunningclubDetails = (runningclubDetails) => ({
   type: FETCHED_RUNNINGCLUB_DETAILS,
