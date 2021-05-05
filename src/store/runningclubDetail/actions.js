@@ -31,3 +31,42 @@ export const incrementLikes = (id) => {
     dispatch(incrementingLikes(response.data));
   };
 };
+
+export const postingReview = (review) => {
+  return {
+    type: POSTED_REVIEW,
+    payload: review,
+  };
+};
+
+export const postReview = (content, id) => {
+  return async (dispatch, getState) => {
+    const { token } = selectUser(getState());
+    const state = getState();
+
+    const response = await axios.post(
+      `${API_URL}/runningslubs/${id}/review`,
+      {
+        time: new Date(),
+        content,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    console.log("create new review", response);
+    dispatch(postReview(response));
+    dispatch(
+      showMessageWithTimeout(
+        "success",
+        false,
+        "You have been successful!",
+        3000
+      )
+    );
+
+    dispatch(appDoneLoading());
+  };
+};
