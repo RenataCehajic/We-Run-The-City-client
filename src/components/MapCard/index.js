@@ -16,7 +16,7 @@ export default function RunningclubMap() {
 
   const runner = new Icon({
     iconUrl: "https://image.flaticon.com/icons/svg/484/484167.svg",
-    iconSize: [25, 25],
+    iconSize: [40, 40],
   });
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function RunningclubMap() {
                 <Link to={`/runningclubs/${location.runningclubId}`}>
                   <h5
                     style={{
-                      color: "#fff",
+                      color: "#74d600",
                     }}
                   >
                     {location.address}
