@@ -45,7 +45,7 @@ export const postReview = (content, id) => {
     const state = getState();
 
     const response = await axios.post(
-      `${API_URL}/runningslubs/${id}/review`,
+      `${API_URL}/runningclubs/${id}/review`,
       {
         time: new Date(),
         content,
@@ -57,7 +57,7 @@ export const postReview = (content, id) => {
       }
     );
     console.log("create new review", response);
-    dispatch(postReview(response));
+    dispatch(postingReview(response.data));
     dispatch(
       showMessageWithTimeout(
         "success",

@@ -32,7 +32,10 @@ export default function Navigation() {
           <NavbarItem path="/" linkText="Home" />
           <NavbarItem path="/runningclubs" linkText="Running clubs" />
           {token && user.isOwner === true ? (
-            <NavbarItem path="/addrunningclub" linkText="Add New Runningclub" />
+            <NavbarItem
+              path="/addrunningclub"
+              linkText="Add New Running club"
+            />
           ) : null}
           {loginLogoutControls}
         </Nav>

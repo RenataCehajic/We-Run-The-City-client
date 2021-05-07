@@ -3,13 +3,16 @@ import { UPDATED_RUNNINGCLUB_LIKES } from "./actions";
 import { POSTED_REVIEW } from "./actions";
 
 const initialState = {
-  locations: [],
+  location: {},
 };
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case FETCHED_RUNNINGCLUB_DETAILS:
-      return payload;
+      return {
+        ...state,
+        ...payload,
+      };
 
     case UPDATED_RUNNINGCLUB_LIKES:
       return {
@@ -18,9 +21,16 @@ export default (state = initialState, { type, payload }) => {
       };
 
     case POSTED_REVIEW:
+      console.log("payload", payload);
+      console.log(state.location);
+      console.log("right location", state);
       return {
         ...state,
-        locations: [...state.bids, [...payload]],
+        location: {
+          ...state.location,
+
+          reviews: [...state.location.reviews, payload],
+        },
       };
 
     default:

@@ -11,22 +11,29 @@ import { useHistory, Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 
 export default function SignUp() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [imageSelected, setImageSelected] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const history = useHistory();
 
-  const uploadImage = () => {
+  const uploadImage = async () => {
     const formData = new FormData();
     formData.append("file", imageSelected);
     formData.append("upload_preset", "pu32zmvv");
 
-    axios
-      .post("https://api.cloudinary.com/v1_1/dogbbrxle/image/upload", formData)
-      .then((response) => console.log(response));
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/dogbbrxle/image/upload",
+      formData
+    );
+    console.log(res);
+
+    const file = res.data.url;
+    console.log("file", file);
+    setImageUrl(file);
   };
 
   useEffect(() => {
@@ -38,11 +45,12 @@ export default function SignUp() {
   function submitForm(event) {
     event.preventDefault();
 
-    dispatch(signUp(name, email, password));
+    dispatch(signUp(firstName, email, password, imageUrl));
 
     setEmail("");
     setPassword("");
-    setName("");
+    setFirstName("");
+    setImageUrl("");
   }
 
   return (
@@ -50,12 +58,12 @@ export default function SignUp() {
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
         <h1 className="mt-5 mb-5">Signup</h1>
         <Form.Group controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>First Name</Form.Label>
           <Form.Control
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={firstName}
+            onChange={(event) => setFirstName(event.target.value)}
             type="text"
-            placeholder="Enter name"
+            placeholder="Enter first name"
             required
           />
         </Form.Group>
@@ -92,11 +100,7 @@ export default function SignUp() {
           <Button variant="primary" onClick={uploadImage}>
             Upload Image
           </Button>
-          <Image
-            style={{ width: 120, marginTop: "20px" }}
-            cloudName="dogbbrxle"
-            publicId="https://res.cloudinary.com/dogbbrxle/image/upload/v1620205148/r5kbc2plwepap7lm4kwl.png"
-          />
+          <img src={imageUrl} alt="" />
         </Form.Group>
         <Form.Group className="mt-5">
           <Button variant="primary" type="submit" onClick={submitForm}>
@@ -108,3 +112,9 @@ export default function SignUp() {
     </Container>
   );
 }
+
+// <Image
+//   style={{ width: 120, marginTop: "20px" }}
+//   cloudName="dogbbrxle"
+//   publicId="https://res.cloudinary.com/dogbbrxle/image/upload/v1620205148/r5kbc2plwepap7lm4kwl.png"
+// />;
