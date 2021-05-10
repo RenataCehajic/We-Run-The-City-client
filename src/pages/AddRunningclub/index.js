@@ -111,7 +111,7 @@ export default function AddRunningclub() {
                 }}
               >
                 <Form.Label>
-                  <h5>Runningclub Title</h5>
+                  <h5>Running club Title</h5>
                 </Form.Label>
                 <Form.Control
                   style={{
