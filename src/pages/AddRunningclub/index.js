@@ -69,17 +69,18 @@ export default function AddRunningclub() {
     <div>
       <>
         <Jumbotron>
-          <h1
-            className="mt-5 mb-5"
-            style={{
-              fontSize: "2rem",
-              marginBottom: "1rem",
-
-              textAlign: "center",
-            }}
-          >
-            Add Running club
-          </h1>
+          <h2 style={{ textAlign: "center" }}>
+            <span
+              style={{
+                textShadow: "#74d600",
+                fontSize: "1.8rem",
+                padding: "20px",
+                boxShadow: "1rem 1rem 5rem #74d600",
+              }}
+            >
+              Add Running club
+            </span>
+          </h2>
 
           <Container
             style={{
