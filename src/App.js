@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 import HomePage from "./pages/HomePage";
 import Runningclubs from "./pages/Runningclubs";
 import RunningclubDetail from "./pages/RunningclubDetail";
-import AddReview from "./pages/AddReview";
+import AddRunningclub from "./pages/AddRunningclub";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -45,7 +45,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/runningclubs/:id" component={RunningclubDetail} />
         <Route path="/runningclubs" component={Runningclubs} />
-        <Route path="/review/:id" component={AddReview} />
+        <Route path="/addrunningclub" component={AddRunningclub} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>

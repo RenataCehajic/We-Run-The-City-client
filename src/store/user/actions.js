@@ -1,6 +1,6 @@
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
-import { selectToken } from "./selectors";
+import { selectToken, selectUser } from "./selectors";
 import {
   appLoading,
   appDoneLoading,
@@ -11,6 +11,7 @@ import {
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const TOKEN_STILL_VALID = "TOKEN_STILL_VALID";
 export const LOG_OUT = "LOG_OUT";
+export const RUNNINGCLUB_ADDED = "RUNNINGCLUB_ADDED";
 
 const loginSuccess = (userWithToken) => {
   return {
@@ -106,6 +107,70 @@ export const getUserWithStoredToken = () => {
       // if we get a 4xx or 5xx response,
       // get rid of the token by logging out
       dispatch(logOut());
+      dispatch(appDoneLoading());
+    }
+  };
+};
+
+export const addRunningclubSuccess = (runningclub) => ({
+  type: RUNNINGCLUB_ADDED,
+  payload: runningclub,
+});
+
+export const addRunningclub = (
+  title,
+  isTraining,
+  trainingPrice,
+  website,
+  email,
+  phoneNum,
+  trainingHours,
+  description,
+  image,
+  address,
+  longitude,
+  latitude
+) => {
+  return async (dispatch, getState) => {
+    const { token } = selectUser(getState());
+    dispatch(appLoading());
+    try {
+      const response = await axios.post(
+        `${apiUrl}/runningclubs/addrunningclub`,
+        {
+          title,
+          isTraining,
+          trainingPrice,
+          address,
+          longitude,
+          latitude,
+          website,
+          email,
+          phoneNum,
+          trainingHours,
+          description,
+          image,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      dispatch(
+        showMessageWithTimeout(
+          "success",
+          false,
+          "You have been successful!",
+          3000
+        )
+      );
+      dispatch(addRunningclubSuccess(response.data));
+      dispatch(appDoneLoading());
+    } catch (error) {
+      console.log(error);
+      dispatch(setMessage("error", true, "Fill in all the fields"));
       dispatch(appDoneLoading());
     }
   };
