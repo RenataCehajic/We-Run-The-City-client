@@ -1,6 +1,41 @@
 # 🏃‍♂️ We Run the City 🏃‍♂️
 
+[Check out the website here]()
+
 We Run The City is a full stack app where you can search for running clubs in Amsterdam, see and write their reviews, like them and add new running clubs. You can also see the parks in Amsterdam where you can run, training hours, price and level of training, so you can compare them and decide where to go for a training. You can also find running locations for each training on a map.
+
+## App demo
+
+`Image coming soon!`
+
+---
+
+## Goals for this project
+
+- demonstrate the main skills I've learned at the Codaisseur Academy.
+- build a full-stack web app from a first idea into a working version within a two-week sprint
+- practice planning with user-stories, wireframes, datamodels, a kanban projectboard and git version control
+- extend my coding knowledge and try out new technologies. I chose to use this opportunity to learn JEST Testing and Styled-Components.
+
+## Technologies used:
+
+### Frontend
+
+- HTML, CSS, JavaScript
+- React-Redux
+- Node JS
+- Cloudinary API
+- JEST Testing
+
+### Backend
+
+- Node.js
+- Express REST API
+- JWT & Bcrypt Authentication
+- PostgreSQL database
+- Sequelize ORM
+
+---
 
 ## User stories
 
