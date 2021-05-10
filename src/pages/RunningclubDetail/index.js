@@ -72,7 +72,7 @@ export default function RunningclubDetail() {
             }}
           >
             {" "}
-            {review.user.firstName} {review.user.lastName} wrote
+            {review.user?.firstName} {review.user?.lastName} wrote
           </h6>{" "}
           <i>{review.content}</i>
         </Card.Header>
