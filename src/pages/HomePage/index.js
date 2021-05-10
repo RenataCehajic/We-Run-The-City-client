@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
+import Footer from "../../components/Footer";
+
 import "./style.css";
 
 export default function HomePage() {
@@ -44,6 +46,7 @@ export default function HomePage() {
           <li></li>
         </ul>
       </Container>
+      <Footer />
     </div>
   );
 }

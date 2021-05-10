@@ -1,4 +1,4 @@
-# 🏃‍♂️ We Run the City 🏃‍♂️
+# 🏃‍♂️ We Run The City 🏃‍♂️
 
 [Check out the website here]()
 
