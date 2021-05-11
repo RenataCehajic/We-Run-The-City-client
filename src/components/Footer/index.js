@@ -19,7 +19,7 @@ export default function Footer() {
         >
           <p
             style={{
-              marginTop: "5rem",
+              marginTop: "4rem",
             }}
           >
             ©2021

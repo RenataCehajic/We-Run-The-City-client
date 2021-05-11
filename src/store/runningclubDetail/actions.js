@@ -56,7 +56,7 @@ export const postReview = (content, id) => {
         },
       }
     );
-    console.log("create new review", response);
+    // console.log("create new review", response);
     dispatch(postingReview(response.data));
     dispatch(
       showMessageWithTimeout(
