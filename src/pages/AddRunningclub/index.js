@@ -44,7 +44,8 @@ export default function AddRunningclub() {
         image,
         address,
         longitude,
-        latitude
+        latitude,
+        history
       )
     );
     setTitle("");
