@@ -129,7 +129,8 @@ export const addRunningclub = (
   image,
   address,
   longitude,
-  latitude
+  latitude,
+  history
 ) => {
   return async (dispatch, getState) => {
     const { token } = selectUser(getState());
@@ -167,6 +168,7 @@ export const addRunningclub = (
       );
       dispatch(addRunningclubSuccess(response.data));
       dispatch(appDoneLoading());
+      history.push("/runningclubs");
     } catch (error) {
       console.log(error);
       dispatch(setMessage("error", true, "Fill in all the fields"));
