@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Image } from "cloudinary-react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -112,9 +111,3 @@ export default function SignUp() {
     </Container>
   );
 }
-
-// <Image
-//   style={{ width: 120, marginTop: "20px" }}
-//   cloudName="dogbbrxle"
-//   publicId="https://res.cloudinary.com/dogbbrxle/image/upload/v1620205148/r5kbc2plwepap7lm4kwl.png"
-// />;
