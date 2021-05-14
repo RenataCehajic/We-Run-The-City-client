@@ -1,6 +1,7 @@
+import { apiUrl } from "../../config/constants";
 import axios from "axios";
 
-const API_URL = "//localhost:4000";
+// const API_URL = "//localhost:4000";
 
 const pagination_limit = 25;
 export const FETCHED_RUNNINGCLUBS = "FETCHED_RUNNINGCLUBS";
@@ -15,7 +16,7 @@ export const fetchRunningclubs = () => {
     const runningclubs = getState().runningclubs.length;
 
     const response = await axios.get(
-      `${API_URL}/runningclubs?limit=${pagination_limit}&&offset=${runningclubs}`
+      `${apiUrl}/runningclubs?limit=${pagination_limit}&&offset=${runningclubs}`
     );
 
     dispatch(fetchedRunningclubs(response.data));
