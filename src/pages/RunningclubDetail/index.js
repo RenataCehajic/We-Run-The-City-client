@@ -133,7 +133,7 @@ export default function RunningclubDetail() {
             >
               {" "}
               Like
-              <p>
+              <div>
                 <Button
                   style={{
                     backgroundColor: "#fdff00",
@@ -153,7 +153,7 @@ export default function RunningclubDetail() {
                 >
                   {runningclubDetails.rate}
                 </p>
-              </p>
+              </div>
             </h4>
           ) : null}
         </div>
@@ -194,7 +194,7 @@ export default function RunningclubDetail() {
                   <a
                     href={runningclubDetails.website}
                     target="_blank"
-                    without
+                    without="true"
                     rel="noopener noreferrer"
                     style={{ color: "#000" }}
                   >
