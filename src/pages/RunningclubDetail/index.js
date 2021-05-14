@@ -246,7 +246,7 @@ export default function RunningclubDetail() {
         <Jumbotron
           className="jumbotron1"
           style={{
-            backgroundColor: "#fff",
+            backgroundColor: "#000",
             backgroundSize: "cover",
             textAlign: "center",
             margin: "20px",
