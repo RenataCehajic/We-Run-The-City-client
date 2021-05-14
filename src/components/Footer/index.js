@@ -42,7 +42,7 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/renata-cehajic-49712630/"
             target="_blank"
-            without
+            without="true"
             rel="noopener noreferrer"
             style={{
               boxShadow: "0.5rem 2rem 2rem #000000",
@@ -67,7 +67,7 @@ export default function Footer() {
           <a
             href="https://github.com/RenataCehajic"
             target="_blank"
-            without
+            without="true"
             rel="noopener noreferrer"
             style={{
               boxShadow: "0.5rem 2rem 2rem #000000",
