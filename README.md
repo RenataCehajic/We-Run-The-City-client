@@ -1,12 +1,14 @@
 # 🏃‍♂️ We Run The City 🏃‍♂️
 
-[Check out the website here]()
+[https://we-run-the-city.netlify.app/]()
 
 We Run The City is a full stack app where you can search for running clubs in Amsterdam, see and write their reviews, like them and add new running clubs. You can also see the parks in Amsterdam where you can run, training hours, price and level of training, so you can compare them and decide where to go for a training. You can also find running locations for each training on a map.
 
 ## App demo
 
-`Image coming soon!`
+<img src="https://res.cloudinary.com/dogbbrxle/image/upload/v1621266785/Screenshot_from_2021-05-14_20-18-26_d26lvf.png" alt="demo">
+<img src="https://res.cloudinary.com/dogbbrxle/image/upload/v1621266796/Screenshot_from_2021-05-14_20-19-39_yq3orv.png" alt="demo">
+<img src="https://res.cloudinary.com/dogbbrxle/image/upload/v1621266808/Screenshot_from_2021-05-14_20-19-58_vfskyc.png" alt="demo">
 
 ---
 
